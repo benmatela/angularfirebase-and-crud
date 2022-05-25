@@ -64,8 +64,8 @@ export class LoginComponent implements OnInit {
 
   submitForm(): void {
     this.isLoading = true;
-    this.successMessage = '';
-    this.errorMessage = '';
+    this.authService.setAuthSuccessMessageStore('');
+    this.authService.setAuthErrorMessageStore('');
 
     this.authService
       .login(String(this.loginForm.value.email), String(this.loginForm.value.password))

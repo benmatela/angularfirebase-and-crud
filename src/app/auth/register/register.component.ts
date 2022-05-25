@@ -20,7 +20,6 @@ export class RegisterComponent implements OnInit {
   registerForm = {} as FormGroup;
   errorMessage = '';
   successMessage = '';
-  authError: any;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -86,11 +85,11 @@ export class RegisterComponent implements OnInit {
 
   submitForm(): void {
     this.isLoading = true;
-    this.successMessage = '';
-    this.errorMessage = '';
     const user = {} as IUser;
     user.email = String(this.registerForm.value.email);
     user.password = String(this.registerForm.value.password);
+    this.authService.setAuthSuccessMessageStore('');
+    this.authService.setAuthErrorMessageStore('');
 
     this.authService.register(user).then((res) => {
       this.isLoading = false;
