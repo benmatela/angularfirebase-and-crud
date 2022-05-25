@@ -49,8 +49,6 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.successMessage = '';
-    this.errorMessage = '';
     this.registerForm = this.formBuilder.group(
       {
         email: new FormControl('', [Validators.required, Validators.email]),
