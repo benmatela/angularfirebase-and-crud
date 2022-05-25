@@ -33,7 +33,7 @@ export class AuthService {
     private storageService: StorageService
   ) {}
 
-  setUserLoggedInStore(userLoggedIn: boolean): void {
+  private setUserLoggedInStore(userLoggedIn: boolean): void {
     this.userLoggedInStore.loggedIn = userLoggedIn;
     this.userLoggedIn$.next(userLoggedIn);
   }
@@ -76,7 +76,7 @@ export class AuthService {
       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
       const token = await result.user?.getIdToken();
 
-      if (result.user && token) {
+      if (token) {
         this.storageService.saveUser(result.user);
         this.storageService.saveToken(token);
         this.setUserLoggedInStore(true);
@@ -96,7 +96,7 @@ export class AuthService {
       const result = await this.afAuth.createUserWithEmailAndPassword(user.email, user.password);
       const token = await result.user?.getIdToken();
 
-      if (result.user && token) {
+      if (token) {
         this.storageService.saveUser(result.user);
         this.storageService.saveToken(token);
         this.router.navigate(['/todos']);
