@@ -1,0 +1,21 @@
+button:focus, button:active:focus, button.active:focus {
+    outline: none !important;
+    outline-style: none !important;
+}
+
+.close-btn {
+    border: 0px;
+    background-color: white;
+}
+
+.close-btn:hover{
+    color: #F93154;
+}
+
+.btn {
+    min-width: 90px;
+}
+
+.times:hover {
+    color: #F93154;
+}

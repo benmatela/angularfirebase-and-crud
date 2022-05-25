@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+.uneditable-input:focus {   
+  border-color: #e20613;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #ff3f4c;
+  outline: 0 none;
+}
+
+.spinner {
+  color: #e20613;
+}
+
+.btn-theme {
+  background-color: #e20613;
+  color: white;
+}
+
+.btn-theme:hover {
+ color: #F9D923;
+}
+
+.page-header {
+  color: #3e3e3e;
+}
+
+label, p {
+  color: #3e3e3e;
+}

@@ -1,0 +1,28 @@
+<div class="m-3">
+    <h4 class="mt-3 mb-4 page-header text-center">Todos ({{todos.length}})</h4>
+
+    <div class="text-center">
+        <div class="spinner-grow spinner mt-2" role="status" *ngIf="isLoading"></div>
+    </div>
+
+    <div class="row" *ngIf="!isLoading && todos && todos.length > 0">
+        <div class="col-md-6">
+            <div class="list-group" *ngFor="let todo of todos; let i = index">
+                <button type="button" class="list-group-item list-group-item-action">
+                  {{i + 1}}. {{todo.name}}
+                  <span class="text-muted"> - {{todo.description}}</span> 
+                </button>
+              </div>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-theme add-todo-btn" (click)="onGoToAddTodo()"> &#x2b; Add Todo</button>
+        </div>
+    </div>
+
+    <div *ngIf="!isLoading && todos && todos.length === 0" class="text-center">
+        <p>No Todos found..</p>
+        <button class="btn btn-theme add-todo-btn" (click)="onGoToAddTodo()"> &#x2b; Add Todo</button>
+    </div>
+
+</div>
+
